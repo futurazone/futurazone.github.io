@@ -89,6 +89,7 @@
 
         .game-cover {
             flex: 1;
+            min-width: 200px;
         }
 
         .game-cover img {
@@ -105,14 +106,31 @@
 
         .game-info h4 {
             font-size: 1.8rem;
-            margin: 0 0 10px 0;
+            margin: 0 0 5px 0;
             font-weight: 600;
+        }
+
+        .game-info .tagline {
+            font-size: 1.1rem;
+            color: #c4c4d0;
+            margin-bottom: 20px;
+            font-style: italic;
         }
 
         .game-info .description {
             font-size: 1rem;
             color: #c4c4d0;
             flex-grow: 1;
+        }
+        
+        .game-info ul {
+            padding-left: 20px;
+            list-style: '💎';
+        }
+
+        .game-info li {
+            padding-left: 10px;
+            margin-bottom: 8px;
         }
 
         .cta-button {
@@ -132,19 +150,6 @@
             transform: translateY(-3px);
             box-shadow: 0 4px 20px rgba(58, 123, 213, 0.5);
         }
-
-        /* --- About Section --- */
-        .about-section {
-            text-align: center;
-            padding: 40px 20px;
-        }
-        
-        .about-section p {
-            max-width: 600px;
-            margin: 0 auto;
-            color: #a9a9b3;
-        }
-
 
         /* --- Footer --- */
         .footer {
@@ -181,7 +186,7 @@
     <div class="container">
         
         <header class="header">
-            <!-- Aquí usamos el logo que ya tienes. Asegúrate de que se llame 'logo.png' -->
+            <!-- Asegúrate de que tu logo se llame 'logo.png' y esté en la misma carpeta -->
             <img src="logo.png" alt="Futura Zone Logo" class="logo">
             <h1>Futura Zone</h1>
             <h2>Desarrollador de Juegos y Aplicaciones Móviles</h2>
@@ -189,34 +194,37 @@
 
         <main>
             <section class="games-section">
-                <h3>Nuestro Juego</h3>
+                <h3>Nuestro Último Lanzamiento</h3>
                 <div class="game-showcase">
                     <div class="game-cover">
-                        <!-- Aquí va la imagen de portada de tu juego -->
+                        <!-- Asegúrate de que la portada de tu juego se llame 'portada-sakkara-loop.jpg' -->
                         <img src="portada-sakkara-loop.jpg" alt="Portada de Sakkara Loop">
                     </div>
                     <div class="game-info">
                         <h4>Sakkara Loop</h4>
-                        <p class="description">
-                            ¡Sumérgete en Sakkara Loop, un adictivo y desafiante juego de puzles arcade! Pon a prueba tus reflejos y tu estrategia en esta aventura de inspiración egipcia. ¿Serás capaz de dominar el bucle?
-                        </p>
-                        <!-- Aquí irían las otras imágenes de gameplay si quieres añadirlas -->
-                        <!-- <img src="gameplay-1.jpg" alt="Gameplay de Sakkara Loop"> -->
+                        <p class="tagline">Estrategia milimétrica, reflejos de infarto y una hipnótica lluvia de gemas.</p>
+                        
+                        <div class="description">
+                            <p>¿Estás listo para un desafío que te atrapará desde el primer disparo? Inspirado en los grandes clásicos pero con una mecánica única, Sakkara Loop te obliga a pensar rápido. ¡Cada disparo cuenta!</p>
+                            <p>Apunta tu lanzador para crear grupos del mismo color y hazlos explotar en una cascada de puntos. ¿No tienes el color que necesitas? ¡Dispara a otra gema para intercambiar tu puntero al instante! Usa esta poderosa mecánica para preparar jugadas maestras y dominar el tablero.</p>
+                            
+                            <h4>Características que te encantarán:</h4>
+                            <ul>
+                                <li>Un gameplay arcade adictivo: fácil de aprender, un verdadero reto dominar.</li>
+                                <li>Controles de un solo toque: intuitivo y preciso.</li>
+                                <li>Domina Power-Ups explosivos como el Rayo, el Reloj y la poderosa Efigie.</li>
+                                <li>Compite en rankings mundiales, nacionales e históricos.</li>
+                                <li>Gráficos vibrantes y efectos visuales satisfactorios.</li>
+                                <li>Juega donde quieras: ¡no se necesita conexión a internet!</li>
+                            </ul>
+                        </div>
+
                         <a href="https://play.google.com/store/apps/details?id=com.futurazone.SakkaraLoop" class="cta-button" target="_blank">
                             Descargar en Google Play
                         </a>
                     </div>
                 </div>
             </section>
-            
-            <section class="about-section">
-                <h3>Sobre Nosotros</h3>
-                <!-- Este texto es un ejemplo. ¡Cuando me respondas lo cambiamos! -->
-                <p>
-                    Futura Zone es un estudio de desarrollo de juegos indie apasionado por crear experiencias divertidas y únicas para jugadores de todo el mundo.
-                </p>
-            </section>
-
         </main>
 
         <footer class="footer">
