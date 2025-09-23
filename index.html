@@ -1,70 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futura Zone</title>
+    <title>Futura Zone - Desarrollo de Juegos Indie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #3a7bd5;
+            --secondary-color: #a64bf4;
+            --dark-bg: #1e1e2f;
+            --light-text: #f4f4f4;
+            --dark-text: #333;
+            --card-bg: #2a2a3e;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--light-text);
+            background-color: var(--dark-bg);
             margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Header --- */
+        .header {
             text-align: center;
+            padding: 60px 20px;
         }
-        .card {
-            background-color: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            max-width: 600px;
-            width: 90%;
+
+        .logo {
+            max-width: 150px;
+            margin-bottom: 20px;
         }
-        h1 {
-            color: #111;
-            margin-bottom: 10px;
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        h2 {
-            color: #555;
+
+        .header h2 {
+            font-size: 1.2rem;
             font-weight: 400;
+            color: #a9a9b3;
+            margin-top: 10px;
+        }
+
+        /* --- Games Section --- */
+        .games-section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+        
+        .games-section h3 {
+            text-align: center;
+            font-size: 2rem;
             margin-top: 0;
             margin-bottom: 30px;
         }
-        .app-title {
-            font-weight: bold;
-            color: #8B4513; /* Un color de tu juego */
+        
+        .game-showcase {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
         }
-        .links a {
-            color: #007bff;
+
+        @media (min-width: 768px) {
+            .game-showcase {
+                flex-direction: row;
+            }
+        }
+
+        .game-cover {
+            flex: 1;
+        }
+
+        .game-cover img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .game-info {
+            flex: 1.5;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-info h4 {
+            font-size: 1.8rem;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+
+        .game-info .description {
+            font-size: 1rem;
+            color: #c4c4d0;
+            flex-grow: 1;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
             text-decoration: none;
-            margin: 0 10px;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 20px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 20px rgba(58, 123, 213, 0.5);
+        }
+
+        /* --- About Section --- */
+        .about-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .about-section p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #a9a9b3;
+        }
+
+
+        /* --- Footer --- */
         .footer {
-            margin-top: 30px;
-            font-size: 14px;
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid #3a3a4f;
+            font-size: 0.9rem;
             color: #888;
         }
+
+        .footer .links a {
+            color: #a9a9b3;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.2s;
+        }
+        
+        .footer .links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer .contact {
+            margin-top: 15px;
+        }
+
+        .footer .contact a {
+            color: #a9a9b3;
+        }
+
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>Futura Zone</h1>
-        <h2>Developer of Mobile Games and Applications</h2>
-        <p>
-            Our latest creation is <strong class="app-title">Sakkara Loop</strong>, an addictive arcade puzzle game.
-        </p>
-        <div class="links">
-            <a href="https://futurazone.github.io/sakkaralooppolicy/privacy-policy.html" target="_blank">Privacy Policy</a>
-            <a href="https://futurazone.github.io/sakkaralooppolicy/terms-and-conditions.html" target="_blank">Terms of Service</a>
-        </div>
-        <div class="footer">
-            <p>Contact: <a href="mailto:futurazone+dev@gmail.com">futurazone+dev@gmail.com</a></p>
-        </div>
+
+    <div class="container">
+        
+        <header class="header">
+            <!-- Aquí usamos el logo que ya tienes. Asegúrate de que se llame 'logo.png' -->
+            <img src="logo.png" alt="Futura Zone Logo" class="logo">
+            <h1>Futura Zone</h1>
+            <h2>Desarrollador de Juegos y Aplicaciones Móviles</h2>
+        </header>
+
+        <main>
+            <section class="games-section">
+                <h3>Nuestro Juego</h3>
+                <div class="game-showcase">
+                    <div class="game-cover">
+                        <!-- Aquí va la imagen de portada de tu juego -->
+                        <img src="portada-sakkara-loop.jpg" alt="Portada de Sakkara Loop">
+                    </div>
+                    <div class="game-info">
+                        <h4>Sakkara Loop</h4>
+                        <p class="description">
+                            ¡Sumérgete en Sakkara Loop, un adictivo y desafiante juego de puzles arcade! Pon a prueba tus reflejos y tu estrategia en esta aventura de inspiración egipcia. ¿Serás capaz de dominar el bucle?
+                        </p>
+                        <!-- Aquí irían las otras imágenes de gameplay si quieres añadirlas -->
+                        <!-- <img src="gameplay-1.jpg" alt="Gameplay de Sakkara Loop"> -->
+                        <a href="https://play.google.com/store/apps/details?id=com.futurazone.SakkaraLoop" class="cta-button" target="_blank">
+                            Descargar en Google Play
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="about-section">
+                <h3>Sobre Nosotros</h3>
+                <!-- Este texto es un ejemplo. ¡Cuando me respondas lo cambiamos! -->
+                <p>
+                    Futura Zone es un estudio de desarrollo de juegos indie apasionado por crear experiencias divertidas y únicas para jugadores de todo el mundo.
+                </p>
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <div class="links">
+                <a href="https://futurazone.github.io/sakkaralooppolicy/privacy-policy.html" target="_blank">Política de Privacidad</a>
+                <a href="https://futurazone.github.io/sakkaralooppolicy/terms-and-conditions.html" target="_blank">Términos de Servicio</a>
+            </div>
+            <div class="contact">
+                <p>Contacto: <a href="mailto:futurazone+dev@gmail.com">futurazone+dev@gmail.com</a></p>
+            </div>
+             <p>&copy; 2024 Futura Zone. Todos los derechos reservados.</p>
+        </footer>
+
     </div>
+
 </body>
 </html>
