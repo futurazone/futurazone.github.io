@@ -11,10 +11,10 @@
         :root {
             --primary-color: #3a7bd5;
             --secondary-color: #a64bf4;
-            --dark-bg: #1e1e2f;
+            --dark-bg: #272a2e;
             --light-text: #f4f4f4;
-            --dark-text: #333;
-            --card-bg: #2a2a3e;
+            --card-bg: #33363a;
+            --border-color: #44474b;
         }
 
         body {
@@ -39,17 +39,8 @@
         }
 
         .logo {
-            max-width: 150px;
-            margin-bottom: 20px;
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin: 0;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            max-width: 280px;
+            margin-bottom: 30px;
         }
 
         .header h2 {
@@ -91,12 +82,32 @@
             flex: 1;
             min-width: 200px;
         }
-
-        .game-cover img {
+        
+        /* --- Slideshow Styles --- */
+        .slideshow-container {
+            position: relative;
             width: 100%;
+            padding-top: 100%; /* Aspect ratio 1:1. Adjust if your images are different */
             border-radius: 8px;
+            overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
+
+        .game-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+        
+        .game-slide.active {
+            opacity: 1;
+        }
+        /* --- End of Slideshow Styles --- */
         
         .game-info {
             flex: 1.5;
@@ -125,7 +136,6 @@
         
         .game-info ul {
             padding-left: 20px;
-            list-style: '💎'; /* This visual element remains as it is, not text for translation */
         }
 
         .game-info li {
@@ -155,7 +165,7 @@
         .footer {
             text-align: center;
             padding: 40px 20px;
-            border-top: 1px solid #3a3a4f;
+            border-top: 1px solid var(--border-color);
             font-size: 0.9rem;
             color: #888;
         }
@@ -186,9 +196,7 @@
     <div class="container">
         
         <header class="header">
-            <!-- Ensure your logo is named 'logo.png' and is in the same folder -->
             <img src="logo.png" alt="Futura Zone Logo" class="logo">
-            <h1>Futura Zone</h1>
             <h2>Developer of Mobile Games and Applications</h2>
         </header>
 
@@ -197,8 +205,12 @@
                 <h3>Our Latest Release</h3>
                 <div class="game-showcase">
                     <div class="game-cover">
-                        <!-- Ensure your game cover image is named 'portada-sakkara-loop.jpg' -->
-                        <img src="portada-sakkara-loop.jpg" alt="Sakkara Loop Cover Art">
+                        <!-- Image slideshow starts here -->
+                        <div class="slideshow-container">
+                            <img src="portada-sakkara-loop.jpg" alt="Sakkara Loop Cover Art" class="game-slide active">
+                            <img src="gameplay-1.jpg" alt="Sakkara Loop Gameplay" class="game-slide">
+                            <img src="gameplay-2.jpg" alt="Sakkara Loop Power-ups" class="game-slide">
+                        </div>
                     </div>
                     <div class="game-info">
                         <h4>Sakkara Loop</h4>
@@ -239,6 +251,21 @@
         </footer>
 
     </div>
+
+    <script>
+        // Simple JavaScript for the image slideshow
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.game-slide');
+        const slideInterval = 4000; // Time in milliseconds (4 seconds)
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(nextSlide, slideInterval);
+    </script>
 
 </body>
 </html>
