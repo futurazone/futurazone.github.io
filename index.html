@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futura Zone - Indie Game Development</title>
+    <title>Futura Zone - Indie Development</title> <!-- Puedes poner tu nombre aquí si quieres -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
@@ -32,24 +32,20 @@
             padding: 40px 20px;
         }
 
-        /* --- Header --- */
+        /* --- Header & Hero --- */
         .header {
             text-align: center;
-            margin-bottom: 50px; /* Reduced space */
+            margin-bottom: 20px;
         }
 
         .logo {
             max-width: 220px;
         }
 
-        /* --- Hero Section --- */
         .hero-section {
             text-align: center;
             max-width: 700px;
             margin: 0 auto 100px auto;
-        }
-        .hero-section .highlight {
-            color: var(--accent-color);
         }
         .hero-section h1 {
             font-size: 3rem;
@@ -57,27 +53,52 @@
             line-height: 1.2;
             margin: 0 0 20px 0;
         }
+        .hero-section .highlight {
+            color: var(--accent-color);
+        }
         .hero-section p {
             font-size: 1.2rem;
             color: var(--text-secondary);
             margin: 0;
         }
+        
+        /* --- About Me Section --- */
+        .about-section {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 120px auto;
+            padding: 40px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+        }
+        .about-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 0;
+        }
+        .about-section p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+        .about-section .tech-list {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 20px;
+        }
 
-        /* --- Section for Game Cards --- */
+        /* --- Game Section --- */
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             font-weight: 900;
-            margin-top: 0;
-            margin-bottom: 50px;
+            margin: 0 0 50px 0;
         }
         
-        /* The Game Card itself */
         .game-card {
             background-color: var(--card-bg);
             border-radius: 16px;
             padding: 30px;
-            margin-bottom: 40px;
             box-shadow: 0 8px 40px rgba(0,0,0,0.2);
         }
         
@@ -127,8 +148,6 @@
         
         .game-info {
             flex: 1.5;
-            display: flex;
-            flex-direction: column;
         }
 
         .game-info h4 {
@@ -144,51 +163,32 @@
         }
         
         .game-info ul {
-            padding-left: 20px;
-            margin-bottom: 20px;
-            font-size: 1rem;
-            color: var(--text-secondary);
+            padding-left: 20px; margin-bottom: 20px; font-size: 1rem; color: var(--text-secondary);
         }
 
         .game-info li {
-            padding-left: 10px;
-            margin-bottom: 8px;
+            padding-left: 10px; margin-bottom: 8px;
         }
 
         .tech-stack {
-            font-size: 0.8rem;
-            color: #888;
-            margin-top: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 0.8rem; color: #888; margin-top: 15px; text-transform: uppercase; letter-spacing: 1px;
         }
 
         .cta-button {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--dark-bg);
-            padding: 14px 28px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            text-align: center;
-            margin-top: 25px;
+            display: inline-block; background-color: var(--accent-color); color: var(--dark-bg); padding: 14px 28px;
+            border-radius: 8px; text-decoration: none; font-weight: 700; text-align: center; margin-top: 25px;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 20px rgba(0, 224, 255, 0.3);
+            transform: translateY(-3px); box-shadow: 0 4px 20px rgba(0, 224, 255, 0.3);
         }
 
         .game-links {
-            margin-top: 20px;
-            font-size: 0.9rem;
+            margin-top: 20px; font-size: 0.9rem;
         }
         .game-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            margin-right: 20px;
+            color: var(--text-secondary); text-decoration: none; margin-right: 20px;
         }
         .game-links a:hover {
             color: var(--accent-color);
@@ -196,11 +196,8 @@
 
         /* --- Footer --- */
         .footer {
-            text-align: center;
-            padding: 60px 20px;
-            border-top: 1px solid var(--border-color);
-            font-size: 1rem;
-            color: var(--text-secondary);
+            text-align: center; padding: 60px 20px; border-top: 1px solid var(--border-color);
+            font-size: 1rem; color: var(--text-secondary);
         }
 
     </style>
@@ -215,12 +212,23 @@
 
         <main>
             <section class="hero-section">
-                <h1>Endless Indie Fun. <br><span class="highlight">Creative Digital Experiences.</span></h1>
+                <h1>Hi, I'm the developer <br>behind <span class="highlight">Futura Zone.</span></h1>
                 <p>
-                    Futura Zone is a creative outlet for building original games and useful applications, one project at a time.
+                    A solo indie developer turning ideas into interactive experiences.
                 </p>
             </section>
             
+            <section class="about-section">
+                <h2>A Lifelong Passion for Code</h2>
+                <p>
+                    Ever since I discovered the ZX Spectrum, I've been fascinated with programming. Futura Zone is my creative outlet, a personal brand for the projects I build in my free time. It's a journey of continuous learning and experimentation.
+                </p>
+                <p class="tech-list">
+                    Exploring: JavaScript, Python, Go, Unity, React Native, AI & more...
+                </p>
+            </section>
+
+            <h3 class="section-title">First Release</h3>
             <section class="game-card">
                 <div class="game-showcase">
                     <div class="game-cover">
@@ -283,10 +291,10 @@
         }
         
         if (slides.length > 0) {
-            slides[0].classList.add('active'); // Ensure first slide is visible on load
+            slides[0].classList.add('active');
             setInterval(nextSlide, slideInterval);
         }
     </script>
 
 </body>
-</html>
+</html>```
