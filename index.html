@@ -6,7 +6,6 @@
     <title>Futura Zone - Indie Game Development</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- New font 'Inter', similar to the reference site for a clean, modern look -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -15,7 +14,6 @@
             --border-color: #44474b;
             --text-primary: #f4f4f4;
             --text-secondary: #a9a9b3;
-            /* Accent color taken from your logo for highlights */
             --accent-color: #00e0ff;
         }
 
@@ -37,14 +35,14 @@
         /* --- Header --- */
         .header {
             text-align: center;
-            margin-bottom: 80px; /* More space after the logo */
+            margin-bottom: 50px; /* Reduced space */
         }
 
         .logo {
-            max-width: 220px; /* Slightly smaller for a more refined look */
+            max-width: 220px;
         }
 
-        /* --- New Hero Section --- */
+        /* --- Hero Section --- */
         .hero-section {
             text-align: center;
             max-width: 700px;
@@ -64,22 +62,8 @@
             color: var(--text-secondary);
             margin: 0;
         }
-        .hero-section .tech-stack {
-            font-size: 0.9rem;
-            color: #888;
-            margin-top: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
 
-
-        /* --- Games Section --- */
-        .games-section {
-            background-color: transparent; /* Removed card background for a seamless look */
-            padding: 0; /* Adjusted padding */
-            margin-bottom: 40px;
-        }
-        
+        /* --- Section for Game Cards --- */
         .section-title {
             text-align: center;
             font-size: 2.5rem;
@@ -88,32 +72,39 @@
             margin-bottom: 50px;
         }
         
+        /* The Game Card itself */
+        .game-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+        }
+        
         .game-showcase {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center items on mobile */
-            gap: 50px;
+            align-items: center;
+            gap: 40px;
         }
 
         @media (min-width: 768px) {
             .game-showcase {
                 flex-direction: row;
-                align-items: flex-start; /* Align to top on desktop */
+                align-items: flex-start;
             }
         }
 
         .game-cover {
-            flex: 0.8; /* Adjusted flex to better fit vertical images */
+            flex: 0.8;
             min-width: 250px;
-            max-width: 300px; /* Max width to control size on larger screens */
+            max-width: 300px;
         }
         
-        /* --- Slideshow with corrected aspect ratio --- */
         .slideshow-container {
             position: relative;
             width: 100%;
-            /* Correct aspect ratio for vertical 9:16 images (16 / 9 = 1.777) */
-            padding-top: 177.7%; 
+            padding-top: 177.7%; /* 9:16 aspect ratio */
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -149,7 +140,27 @@
         .game-info .description {
             font-size: 1.1rem;
             color: var(--text-secondary);
-            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+        
+        .game-info ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .game-info li {
+            padding-left: 10px;
+            margin-bottom: 8px;
+        }
+
+        .tech-stack {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .cta-button {
@@ -170,31 +181,25 @@
             box-shadow: 0 4px 20px rgba(0, 224, 255, 0.3);
         }
 
+        .game-links {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+        .game-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        .game-links a:hover {
+            color: var(--accent-color);
+        }
+
         /* --- Footer --- */
         .footer {
             text-align: center;
             padding: 60px 20px;
             border-top: 1px solid var(--border-color);
             font-size: 1rem;
-            color: var(--text-secondary);
-        }
-
-        .footer .links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            margin: 0 15px;
-            transition: color 0.2s;
-        }
-        
-        .footer .links a:hover {
-            color: var(--accent-color);
-        }
-        
-        .footer .contact {
-            margin-top: 15px;
-        }
-
-        .footer .contact a {
             color: var(--text-secondary);
         }
 
@@ -209,57 +214,62 @@
         </header>
 
         <main>
-            <!-- New introductory "Hero" section -->
             <section class="hero-section">
-                <h1>From a <span class="highlight">summer idea</span> to your screen.</h1>
-                <!-- This is the draft text. We can change it based on your answer -->
+                <h1>Endless Indie Fun. <br><span class="highlight">Creative Digital Experiences.</span></h1>
                 <p>
-                    Futura Zone is the passion project of an amateur indie developer, creating games in his free time. This is the beginning of the journey.
+                    Futura Zone is a creative outlet for building original games and useful applications, one project at a time.
                 </p>
-                <p class="tech-stack">Built with React Native</p>
             </section>
             
-            <section class="games-section">
-                <h3 class="section-title">Our First Game</h3>
+            <section class="game-card">
                 <div class="game-showcase">
                     <div class="game-cover">
                         <div class="slideshow-container">
-                            <img src="portada-sakkara-loop.jpg" alt="Sakkara Loop Cover Art" class="game-slide active">
-                            <img src="gameplay-1.jpg" alt="Sakkara Loop Gameplay" class="game-slide">
-                            <img src="gameplay-2.jpg" alt="Sakkara Loop Power-ups" class="game-slide">
+                            <img src="portada-sakkara-loop.jpg" alt="Sakkara Loop Cover Art" class="game-slide">
+                            <img src="gameplay-1.png" alt="Sakkara Loop Gameplay" class="game-slide">
+                            <img src="gameplay-2.png" alt="Sakkara Loop Power-ups" class="game-slide">
                         </div>
                     </div>
                     <div class="game-info">
                         <h4>Sakkara Loop</h4>
                         <p class="description">
                             Are you ready for a challenge that combines precision strategy, lightning-fast reflexes, and a hypnotic shower of gems?
-                            <br><br>
-                            Inspired by classic arcade puzzlers but with a unique swap-mechanic, Sakkara Loop forces you to think fast. Every shot counts! Use powerful Power-Ups to dominate the board and compete in global leaderboards to prove your skill.
                         </p>
+                        
+                        <h5>Features You'll Love:</h5>
+                        <ul>
+                            <li>Addictive arcade gameplay: easy to learn, a true challenge to master.</li>
+                            <li>One-touch controls: intuitive and precise.</li>
+                            <li>Master explosive Power-Ups like the Lightning, the Clock, and the mighty Effigy.</li>
+                            <li>Compete in global, national, and historical rankings.</li>
+                            <li>Vibrant graphics and satisfying visual effects.</li>
+                            <li>Play anywhere: no internet connection needed!</li>
+                        </ul>
                         
                         <a href="https://play.google.com/store/apps/details?id=com.futurazone.SakkaraLoop" class="cta-button" target="_blank">
                             Download on Google Play
                         </a>
+                        
+                        <p class="tech-stack">Built with React Native</p>
+                        
+                        <div class="game-links">
+                             <a href="https://futurazone.github.io/sakkaralooppolicy/privacy-policy.html" target="_blank">Privacy Policy</a>
+                             <a href="https://futurazone.github.io/sakkaralooppolicy/terms-and-conditions.html" target="_blank">Terms of Service</a>
+                        </div>
                     </div>
                 </div>
             </section>
         </main>
 
         <footer class="footer">
-            <div class="links">
-                <a href="https://futurazone.github.io/sakkaralooppolicy/privacy-policy.html" target="_blank">Privacy Policy</a>
-                <a href="https://futurazone.github.io/sakkaralooppolicy/terms-and-conditions.html" target="_blank">Terms of Service</a>
-            </div>
-            <div class="contact">
-                <p>Contact: <a href="mailto:futurazone+dev@gmail.com">futurazone+dev@gmail.com</a></p>
-            </div>
+             <p>Contact: <a href="mailto:futurazone+dev@gmail.com" style="color: var(--text-secondary);">futurazone+dev@gmail.com</a></p>
              <p>&copy; 2024 Futura Zone. All rights reserved.</p>
         </footer>
 
     </div>
 
     <script>
-        // Slideshow JavaScript (no changes needed here)
+        // Slideshow JavaScript
         let currentSlide = 0;
         const slides = document.querySelectorAll('.game-slide');
         const slideInterval = 4000;
@@ -271,9 +281,9 @@
                 slides[currentSlide].classList.add('active');
             }
         }
-        // Initialize the first slide
+        
         if (slides.length > 0) {
-            slides[0].classList.add('active');
+            slides[0].classList.add('active'); // Ensure first slide is visible on load
             setInterval(nextSlide, slideInterval);
         }
     </script>
